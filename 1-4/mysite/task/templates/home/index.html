@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+<body>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+    </style>
+    <h1>DATA MAHASISWA</h1>
+
+<table id="customers">
+  <tr>
+    <th>nama mahasiswa</th>
+    <th>jurusan</th>
+    <th>prodi</th>
+  </tr>
+  <tr>
+    <td>muhammad yasin</td>
+    <td>informatika</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>samsul alam</td>
+    <td>informatika</td>
+    <td>spanyol</td>
+  </tr>
+  <tr>
+    <td>hanif misbahuddin</td>
+    <td>informatika</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>risal hidayah tullah</td>
+    <td>informatika</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>ilzam</td>
+    <td>informatika</td>
+    <td>UK</td>
+  </tr>
+  
+</table>
+
+</body>
+<style>
+    input[type=text] {
+ width: 50%;
+ padding: 9px 15px;
+ margin: 8px 0;
+ box-sizing: content-box;
+ background-color: bisque;
+   }
+</style>
+
+</head>
+<body>
+   
+
+   <form action="" method="POST">
+       {%csrf_token%}
+   
+       <input type="text" name="name">
+       <button type= "submit"> Pencarian </button>
+   </form>
+   
+   <div class "hasil">   
+       {%for d in data%}
+       {{d.name}}
+       {% endfor%}
+   </div>
+   
+</body>
+</body>
+</html>
