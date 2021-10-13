@@ -13,10 +13,37 @@
         <center>
 			<div class="mt-5">
 				<h1>MENU UTAMA</h1>
+                <h2>Anabahlul</h2>
 				<div class="mt-5">
-					<a type="button" class="btn btn-primary mr-3" href="/crud1">daftar makanan</a>
-					<a type="button" class="btn btn-secondary ml-3" href="/crud2">daftar minuman</a>
+
+					<a type="button" class="btn btn-primary mr-3" href="foods/">daftar makanan</a>
+					<a type="button" class="btn btn-primary mr-3" href="/drink/">daftar minuman</a>
+
 			</div>
-		</center>
+        </center>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">no</th>
+                <th scope="col">nama</th>
+                <th scope="col">jenis</th>
+                <th scope="col">harga</th>
+            
+            </tr>
+            </thead>
+            <tbody>
+                {%for i in menu%}
+              <tr>
+                <th scope="row">{{foorloop.counter}}</th>
+                <td>{{i.nama}}</td>
+                <td>{{i.jenis}}</td>
+                <td>{{i.harga}}</td>   
+              </tr>
+               {% endfor %}
+            </tbody>
+          </table>
+
+
+	
 </body>
 </html>
