@@ -13,9 +13,7 @@
         <center>
 			<div class="mt-5">
 				<h1>MENU UTAMA</h1>
-                <h2>Anabahlul</h2>
-				<div class="mt-5">
-
+                <h2>entebahlul</h2>
 					<a type="button" class="btn btn-primary mr-3" href="foods/">daftar makanan</a>
 					<a type="button" class="btn btn-primary mr-3" href="/drink/">daftar minuman</a>
 
@@ -32,7 +30,7 @@
             </tr>
             </thead>
             <tbody>
-                {%for i in menu%}
+                {%for i in data%}
               <tr>
                 <th scope="row">{{foorloop.counter}}</th>
                 <td>{{i.nama}}</td>
