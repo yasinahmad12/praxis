@@ -5,9 +5,14 @@ from . import models
 
 # Create your views here.
 def index (req): 
-    menu_utama = models.home.objects.all()
+    menu_utama = models.home.objects.all() 
+    data_makanan= models.makan.objects.all()
+    data_minuman= models.minum.objects.all()
+
     return render(req, 'indexhome/home.html',{
         'data': menu_utama,
+        'data1': data_makanan,
+        'data2': data_minuman,
     })
 
 def input_makan (req):
@@ -31,7 +36,7 @@ def input_minuman (req):
             harga= req.POST['harga'],
             
         )
-        return redirect('/foods/')
+        return redirect('/drink/')
     cemilan= models.minum.objects.all()
     return render(req, 'indexminum/minuman.html',{
         'data_minum': cemilan,
@@ -40,14 +45,9 @@ def input_minuman (req):
 
 def hapus_makan (req, id) :
     models.makan.objects.filter(pk=id).delete()
-    return redirect('/foods')
+    return redirect('/foods/')
+
 
 def hapus_minum (req, id) :
     models.minum.objects.filter(pk=id).delete()
-    return redirect('/foods')
-
-def menu_utama (req):
-    menu = models.lapar.objects.all()
-    return render(req,"indexhome/home.html",{
-        'menu': menu
-    })
+    return redirect('/drink/')

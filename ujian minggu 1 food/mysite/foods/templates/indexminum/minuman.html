@@ -18,8 +18,8 @@
             <label for="">jenis</label>
             <select name="jenis" id="">
                 <option selected>pilih</option>
-                <option value="kering">es</option>
-                <option value="basah">panas</option>
+                <option value="es">es</option>
+                <option value="panas">panas</option>
             </select>
             <label for="">harga</label>
             <input type="number" name="harga">
@@ -45,7 +45,7 @@
                     <td>{{i.jenis}}</td>
                     <td>{{i.harga}}</td>
                     <td>
-                        <a href="/hapus/{{i.id}}"><button type="button" class="btn btn-danger">Hapus</button></a>
+                        <a href="/minum/hapus/{{i.id}}"><button type="button" class="btn btn-danger">Hapus</button></a>
                     </td>
                 </tr>
                 {% endfor %}
